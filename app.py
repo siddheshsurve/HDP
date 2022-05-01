@@ -96,7 +96,7 @@ def report():
     else :
         ca=4
     st.markdown(""" <br>""", True)
-
+    
     # thal = st.number_input("thal")
     thl= st.radio("Thalassemia (thal)",('0','1','2','3'))
     if thl == '0':
@@ -107,7 +107,7 @@ def report():
         thal=2
     else :
         thal=3
-    st.markdown(""" <br>""", True)
+    
 
     user_report_data={
         'age':age,
@@ -130,7 +130,6 @@ def report():
 user_data=report()
 st.write(user_data)
 final_result=model.predict(user_data)
-st.markdown(""" <br>""", True)
 if st.button("Predict"):
    
     if final_result==1:
