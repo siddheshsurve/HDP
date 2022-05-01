@@ -99,9 +99,9 @@ def report():
 
     user_report_data={
         'age':age,
-        'jersy':sex,
+        'sex':sex,
         'cp':cp,
-        'tresbps':trestbps,
+        'trestbps':trestbps,
         'chol':chol,
         'fbs':fbs,
         'restecg':restecg,
@@ -121,9 +121,9 @@ final_result=model.predict(user_data)
 if st.button("Predict"):
    
     if final_result==1:
-        st.subheader('yes you might have heart disease')
+        st.markdown("<h1 style='text-align: center; color: red;'>You Might have Heart disease, Take care</h1>", unsafe_allow_html=True)
     if final_result==0:
-        st.subheader('congratulation you are healthy')
+        st.markdown("<h1 style='text-align: center; color: green;'>Congratulations you are healthy</h1>", unsafe_allow_html=True)
 
 
 
