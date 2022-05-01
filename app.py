@@ -2,9 +2,9 @@ from unittest import result
 import streamlit as st
 import pickle
 import pandas as pd
-import numpy as np
 
-model = pickle.load(open('model.sav','rb'))
+
+modelhdp = pickle.load(open('model.sav','rb'))
 
 
 st.markdown("<h1 style='text-align: center'>HEART DISEASE PREDICTION</h1>", unsafe_allow_html=True)
@@ -128,7 +128,7 @@ def report():
     
 user_data=report()
 st.write(user_data)
-final_result=model.predict(user_data)
+final_result=modelhdp.predict(user_data)
 if st.button("Predict"):
    
     if final_result==1:
