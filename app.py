@@ -1,3 +1,4 @@
+from turtle import width
 from unittest import result
 import streamlit as st
 import pickle
@@ -8,7 +9,8 @@ from PIL import Image
 
 model = pickle.load(open('model.sav','rb'))
 
-st.title("Heart disease predication")
+
+st.markdown("<h1 style='text-align: center'>HEART DISEASE PREDICTION</h1>", unsafe_allow_html=True)
 st.markdown(""" <br> <br> """, True)
 def report():
     age = st.number_input("Age")
